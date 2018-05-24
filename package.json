@@ -1,0 +1,32 @@
+{
+  "name": "monfy",
+  "version": "0.1.0",
+  "description": "Multi configuration for your app ",
+  "main": "monfy.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "nyc --reporter=html --reporter=text mocha --timeout=3000 .\\test\\*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michalzaq12/monfy.git"
+  },
+  "keywords": [
+    "config",
+    "multi",
+    "env"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/michalzaq12/monfy/issues"
+  },
+  "homepage": "https://github.com/michalzaq12/monfy#readme",
+  "devDependencies": {
+    "mocha": "^5.2.0",
+    "nyc": "^11.8.0",
+    "should": "^13.2.1"
+  }
+}
