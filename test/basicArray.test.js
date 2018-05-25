@@ -157,4 +157,65 @@ describe("MONFY_TAG in array", () => {
     });
 
 
+    it("Override property object in array #! 1", () => {
+        let config = {
+            array: [
+                {
+                    name: 'loader1',
+                    a: 1,
+                    a__dev: 3
+                }
+            ]
+        };
+
+        let result = monfy(config, 'dev');
+        result.should.have.property('array');
+        result.array[0].should.have.property('a').eql(3);
+        result.array[0].should.not.have.property('a__dev');
+    });
+
+
+
+    it("Override property object in array #! 2", () => {
+        let config = {
+            array: [
+                {
+                    name: 'loader1',
+                    a: 1,
+                    options: {
+                        x: 4,
+                        x__dev: 5
+                    }
+                }
+            ]
+        };
+
+        let result = monfy(config, 'dev');
+        result.should.have.property('array');
+        result.array.should.be.Array();
+        result.array.length.should.be.eql(1);
+        result.array[0].should.have.property('options');
+        result.array[0].options.should.have.property('x').eql(5);
+        result.array[0].options.should.not.have.property('x__dev');
+    });
+
+    it("Override property object in array #! 3", () => {
+        let config = [
+            {
+                name: 'loader1',
+                a: 1,
+                options: {
+                    x: 4,
+                    x__dev: 5
+                }
+            }
+        ];
+
+        let result = monfy(config, 'dev');
+        result.should.be.Array();
+        result.length.should.be.eql(1);
+        result[0].should.have.property('options');
+        result[0].options.should.have.property('x').eql(5);
+        result[0].options.should.not.have.property('x__dev');
+    });
 });

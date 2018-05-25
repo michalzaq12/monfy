@@ -1,44 +1,46 @@
 # __ monfy
 
+[![npm version](https://badge.fury.io/js/monfy.svg)](https://badge.fury.io/js/monfy)
 [![Build Status](https://travis-ci.org/michalzaq12/monfy.svg?branch=master)](https://travis-ci.org/michalzaq12/monfy)
 [![Coverage Status](https://coveralls.io/repos/github/michalzaq12/monfy/badge.svg)](https://coveralls.io/github/michalzaq12/monfy)
+[![Dependency Status](https://david-dm.org/michalzaq12/monfy.svg)](https://david-dm.org/michalzaq12/monfy)
 
-> Multi configuration for different deployment environments 
+> Multi configurations for different deployment environments 
 (development, qa, staging, production, etc.) in simple object.
 
 
-## Quick Start
+## Installation
 
 ```bash
-    npm install --save-dev monfy
+npm install --save-dev monfy
 ```
 
 
-## Usage
+## Quick Start
 
 Base monfy tag: `__{suffix}`
 
 Negation tag: `__{suffix}$`
 
 ```javascript
-    const monfy = require('monfy');
-    //OR
-    const {monfy, monfyToArray} = require('monfy');
+const monfy = require('monfy');
+//OR
+const {monfy, monfyToArray} = require('monfy');
     
     
-    let baseConfig = {
-        a: 20,
-        a__dev: 50
-    };
+let baseConfig = {
+    a: 20,
+    a__dev: 50
+};
     
     
-    let config = monfy(baseConfig, 'dev');
-    console.log(config);
-    //output -> {a: 50}
+let config = monfy(baseConfig, 'dev');
+console.log(config);
+//output -> {a: 50}
     
-    let config2 = monfy(baseConfig);
-    console.log(config2);
-    //output -> {a: 20}
+let config2 = monfy(baseConfig);
+console.log(config2);
+//output -> {a: 20}
 ```
 
 

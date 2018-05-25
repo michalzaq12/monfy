@@ -1,7 +1,7 @@
 {
   "name": "monfy",
-  "version": "0.1.0",
-  "description": "Multi configuration for your app ",
+  "version": "0.1.1",
+  "description": "Multi configurations for different deployment environments in simple object",
   "main": "monfy.js",
   "directories": {
     "test": "test"

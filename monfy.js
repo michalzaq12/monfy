@@ -93,10 +93,10 @@ function removeProperty (keyChain, object, overrideDefault = false){
     }else{
         //Keep object in array - remove only MONFY_TAG
         let parentParent = getProperty(keyChain.slice(0, keyChain.length - 3), object);
-        let parent = getProperty(keyChain.slice(0, keyChain.length - 2), object);
         let propertyKey = keyChain[keyChain.length - 1];
 
         if(Array.isArray(parentParent)){
+            let parent = getProperty(keyChain.slice(0, keyChain.length - 2), object);
             let arrayKey = keyChain[keyChain.length - 2];
             let propertyKey = keyChain[keyChain.length - 1];
             //first copy all references and remove object which include MONFY_TAG
@@ -108,6 +108,7 @@ function removeProperty (keyChain, object, overrideDefault = false){
             //add new copied object (object without MONFY_TAG) to array
             parent[arrayKey][propertyKey] = copy;
         }else{
+            let parent = getProperty(keyChain.slice(0, keyChain.length - 1), object);
             //if primitives
             if(propertyKey === undefined) return delete property[lastKey];
 
