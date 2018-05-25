@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "test": "nyc --reporter=html --reporter=text mocha --timeout=3000 .\\test\\*.test.js",
-    "cover": "nyc --reporter=lcov --reporter=text-lcov npm test"
+    "coverage": "nyc report --reporter=text-lcov .\\test\\*.test.js | coveralls"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/michalzaq12/monfy#readme",
   "devDependencies": {
+    "coveralls": "^3.0.1",
     "mocha": "^5.2.0",
     "nyc": "^11.8.0",
     "should": "^13.2.1"

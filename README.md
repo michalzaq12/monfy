@@ -1,5 +1,8 @@
 # __ monfy
 
+[![Build Status](https://travis-ci.org/michalzaq12/monfy.svg?branch=master)](https://travis-ci.org/michalzaq12/monfy)
+[![Coverage Status](https://coveralls.io/repos/github/michalzaq12/monfy/badge.svg)](https://coveralls.io/github/michalzaq12/monfy)
+
 > Multi configuration for different deployment environments 
 (development, qa, staging, production, etc.) in simple object.
 
