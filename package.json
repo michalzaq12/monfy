@@ -12,8 +12,8 @@
     "monfy.js"
   ],
   "scripts": {
-    "test": "nyc --reporter=html --reporter=text  --reporter=lcov mocha",
-    "coverage": "cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "test": "nyc --reporter=html --reporter=text mocha",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
