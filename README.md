@@ -132,81 +132,10 @@ Similar to `monfy`; returns array from object values (without keys)
     else remove
     
     
-## Examples 
+## Real-world examples 
 
-### 1.
-   
-```javascript
-    let config = {
-        a:{
-            a2: true
-        },
-        a__dev:{
-            b1: [1,2,3]
-        },
-        c: {
-            c1:{
-                c2:{
-                    c3: 'tak',
-                    c3__test$: 'nie'
-                }
-            }
-        }
-    }
-```
+- [webpack-merge vs monfy](https://gist.github.com/michalzaq12e270f7b920d55cc07d382c731b0adb4b)
 
-```javascript
-    console.log(monfy(config));
-```
+- [webpack configuration](https://github.com/michalzaq12/team-management-app/blob/master/build/webpack.conf.js)
 
-Output:
-
-```javascript
-    {
-        a: {
-            a2: true
-        },
-        c: {
-            c1:{
-                c2:{
-                    c3: 'nie'
-                }
-            }
-        }
-    }
-```
-
-
-### 2.
-   
-```javascript
-    let config = [
-        {
-            plugin: 'plugin1',
-            options: {}
-        },
-        {
-            __: 'dev',
-            plugin: 'plugin2',
-            options: {}   
-        }]
-```
-
-```javascript
-    console.log(monfy(config, 'dev'));
-```
-
-Output:
-
-```javascript
-    [
-        {
-            plugin: 'plugin1',
-            options: {},
-        },
-        {
-            plugin: 'plugin2',
-            options: {}
-        }
-    ]
-```
+- [database connection configuration](https://gist.github.com/michalzaq12/05b55fd0daf91df12dc3717bd00f846e)
